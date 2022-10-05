@@ -6,32 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Wolfram</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<!--
         <div class="settings" >
         <div class="container">
             <h2 id="cancel" onclick="cancel()">X</h2>
             <h2>Settings</h2>
             <div class="options">
-                <div class="labels">
+                <button onclick="darkmode()" ><i class="fa fa-moon-o" aria-hidden="true"></i></button>
+                <button onclick="lightmode()" ><i class="fa fa-sun-o" aria-hidden="true"></i></button>
 
-                    <label for="text-color">Color:</label>
-                    <br>
-                    <label for="bg-color">Background:</label>
-                </div>
-                <div class="enters">
-                    <input type="color" id="text-color" value="#000000">
-                    <br>
-                    <input type="color" id="bg-color" value="#ffffff">
-                </div>
-    
             </div>
+            <p></p>
         </div>
     </div>
--->
+
     <div class="inputs">
-        <input type="text" placeholder="Enter Question" id="question"><button>Search</button><!--<button onclick="settings()">Settings</button>-->
+        <input type="text" placeholder="Enter Question" id="question">
+        <button ><i class="fa fa-search" aria-hidden="true"></i></button>
+
+        <button onclick="settings()"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>
     </div>
     <iframe></iframe>
 

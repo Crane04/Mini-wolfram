@@ -1,10 +1,11 @@
 const inpEl=document.querySelector("#question")
-const btn=document.querySelectorAll("button")[0]
+const btn=document.querySelector(".fa-search")
 const iframe=document.querySelector("iframe")
 const firstFrame=iframe.contentWindow.document
-/* const setting=document.querySelector(".settings")
-const tcolor=document.querySelector("#text-color")
-const bgcolor=document.querySelector("#bg-color")*/
+const setting=document.querySelector(".settings")
+const foreground=localStorage.getItem("foreground")
+const background=localStorage.getItem("background")
+const p = document.querySelector("p")
 btn.addEventListener("click", function(){
     firstFrame.open()
     firstFrame.writeln(
@@ -42,7 +43,7 @@ btn.addEventListener("click", function(){
     firstFrame.close()
 
 
-        const apikey=`https://api.wolframalpha.com/v1/simple?appid=ARWRHJ-XUEAJTG89X&i=${inpEl.value}%3F&fontsize=16`
+        const apikey=`https://api.wolframalpha.com/v1/simple?appid=ARWRHJ-XUEAJTG89X&i=${inpEl.value}%3F&fontsize=16&background=${background}&foreground=${foreground}`
     iframe.src=apikey
     
 })
@@ -74,10 +75,27 @@ firstFrame.open()
     )
     firstFrame.close()
 
-
-/*            function settings(){
-        setting.style.display="flex"
+          function settings(){
+            setting.style.display="flex"
     }
+
     function cancel(){
         setting.style.display="none"
-    }*/
+        p.innerText=""
+    }
+
+function darkmode(){
+
+    localStorage.setItem("background","193555")
+    localStorage.setItem("foreground","white")
+    p.innerHTML=`Darkmode has been activated, please refresh page for this feature to work. Or click <a onclick="location.reload()" href="">here</a>`
+}
+
+function lightmode(){
+    localStorage.setItem("background","f5f5f5")
+    localStorage.setItem("foreground","193555")
+    p.innerHTML=`Lightmode has been activated, please refresh page for this feature to work. Or click <a onclick="location.reload()" href="">here</a>`
+}
+
+//background=F5F5F5
+//foreground=white
