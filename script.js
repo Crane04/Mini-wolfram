@@ -52,7 +52,7 @@ firstFrame.open()
 
         `
         <div>
-        <h1>Craennie Mini Wolfram</h1>
+        <h2>Craennie Mini Wolfram</h2>
         <p>Let's solve your problems...</p>
         </div>
         <style>
